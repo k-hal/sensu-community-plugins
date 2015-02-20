@@ -89,6 +89,7 @@ class SQSMsgs < Sensu::Plugin::Check::CLI
     hash.update access_key_id: config[:aws_access_key], secret_access_key: config[:aws_secret_access_key]\
       if config[:aws_access_key] && config[:aws_secret_access_key]
     hash
+    hash.update region: config[:aws_region]
   end
 
   def run
